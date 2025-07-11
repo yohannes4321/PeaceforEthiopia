@@ -30,8 +30,7 @@ const GalleryHighlights: React.FC = () => {
     {
       title: ' Conference on Peace',
       images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
-
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
       ],
       description: 'Young voices shaping the future of Ethiopia'
     },
@@ -48,7 +47,7 @@ const GalleryHighlights: React.FC = () => {
     {
       title: 'Interfaith Peace Dialogue',
       images: [
-'../../public/5/photo_2025-07-07_14-43-23.jpg', '../../public/5/photo_2025-07-07_14-42-28.jpg', '../../public/5/photo_2025-07-07_14-41-52.jpg', '../../public/5/photo_2025-07-07_14-41-42.jpg', '../../public/5/photo_2025-07-07_14-38-47.jpg', '../../public/5/photo_2025-07-07_14-38-31.jpg', '../../public/5/photo_2025-07-07_14-38-26.jpg', '../../public/5/photo_2025-07-07_14-37-33.jpg'
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
       ],
       description: 'Religious leaders united for peace'
     },
