@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="..\..\public\1.jpg"
+          src="https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-39_dlblw8.jpg"
           alt="Peace gathering in Ethiopia"
           className="w-full h-full object-cover"
         />

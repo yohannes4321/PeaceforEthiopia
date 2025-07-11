@@ -9,16 +9,13 @@ const GalleryHighlights: React.FC = () => {
     {
       title: 'World Vision Ethiopia',
       images: [
-        '../../public/worldvission/photo_2025-07-07_13-51-02.jpg',
-        '../../public/worldvission/2.jpg',
-        '../../public/worldvission/photo_2025-07-07_13-51-02.jpg',
-        '../../public/worldvission/photo_2025-07-07_13-51-23.jpg',
-        '../../public/worldvission/photo_2025-07-07_13-51-30.jpg',
-        '../../public/worldvission/photo_2025-07-07_13-51-39.jpg',
-        '../../public/worldvission/photo_2025-07-07_13-51-51.jpg',
-        '../../public/worldvission/3.jpg',
-        '../../public/worldvission/4.jpg',
-        '../../public/worldvission/5.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242904/photo_2025-07-07_13-51-02_sybtox.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242903/2_ctqpbv.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
+     
         
       ],
       description: 'collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference at Nexus Hotel in Addis Ababa.'
