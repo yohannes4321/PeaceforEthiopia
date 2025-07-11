@@ -65,8 +65,15 @@ const About: React.FC = () => {
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">About Peace for Ethiopia</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              We are a dedicated organization committed to building bridges, healing wounds, 
-              and creating lasting peace in Ethiopia through dialogue, mediation, and community engagement.
+             PEACE FOR ETHIOPIA (PfE), is a non-governmental, non-partisan, non-political, nonprofit, impartial, voluntary organization operating in Ethiopia. PEACEFORETHIOPIA (PfE), was established in earlyJune2020 and is registered as a non-Governmental Organization whose aims are to Promote peaceful and secure societies and Good Governance.
+
+Peace for Ethiopia (PfE) endeavors to realize constructive personal, group and political relationships across ethnic, religious, class, national, and racial boundaries. It aims to resolve injustice in nonviolent ways and to transform the structural conditions that generate deadly conflict.
+
+Peace for Ethiopia (PfE) engages in conflict prevention; conflict management; conflict resolution and transformation, and post-conflict reconciliation. It also strategically works over the long run and at all levels of society to establish and sustain relationships among people locally and regionally.
+
+Peace for Ethiopia’s (PfE) network includes people and groups “on the ground” (community and religious groups, grassroots organizations, etc.) with policymakers and powerbrokers (governments, faith-based organizations, national and international NGOs). Peace for Ethiopia (PfE) is established not only to resolve conflicts, but to build societies, institutions, policies, and relationships that are better able to sustain peace and justice. It also strategically addresses issues of human rights, economic prosperity, and environmental sustainability as well as violence.
+
+Peace for Ethiopia (PfE) stretches across generations. While it engages immediate crises, Peace for Ethiopia (PfE) recognizes that peacemaking is a long-term vocation that requires the building of cross-group networks and alliances that will survive intermittent conflicts and create a platform for sustainable human development and security.
             </p>
           </div>
         </div>

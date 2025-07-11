@@ -23,16 +23,14 @@ const GalleryHighlights: React.FC = () => {
     {
       title: 'inter community dialogues between Oromo and Gumuz ',
       images: [
-'../../public/keflhagre/1.jpg', '../../public/keflhagre/2.jpg', '../../public/keflhagre/photo_2025-07-07_14-05-50.jpg', '../../public/keflhagre/photo_2025-07-07_14-05-39.jpg', '../../public/keflhagre/photo_2025-07-07_14-05-33.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-53.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-46.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-40.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-31.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-11.jpg', '../../public/keflhagre/photo_2025-07-07_14-03-25.jpg'
-
-
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243406/1_euts7h.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
       ],
       description: 'Communities in West Wollega, East Wollega and Kemashi Zones  Asossa town from March18- 21/2025'
     },
     {
-      title: 'Youth Conference on Peace',
+      title: ' Conference on Peace',
       images: [
-'../../public/3/photo_2025-07-07_14-20-06.jpg','../../public/3/photo_2025-07-07_14-21-09.jpg', '../../public/3/photo_2025-07-07_14-21-04.jpg', '../../public/3/photo_2025-07-07_14-20-47.jpg', '../../public/3/photo_2025-07-07_14-20-39.jpg', '../../public/3/photo_2025-07-07_14-20-26.jpg', '../../public/3/photo_2025-07-07_14-20-18.jpg', '../../public/3/photo_2025-07-07_14-20-12.jpg', '../../public/3/photo_2025-07-07_14-19-57.jpg', '../../public/3/photo_2025-07-07_14-19-09.jpg'
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
 
       ],
       description: 'Young voices shaping the future of Ethiopia'
@@ -40,7 +38,9 @@ const GalleryHighlights: React.FC = () => {
     {
       title: 'Tigray Reconciliation Summit',
       images: [
-'../../public/4/photo_2025-07-07_14-42-28.jpg','../../public/4/photo_2025-07-07_14-43-23.jpg', '../../public/4/photo_2025-07-07_14-41-52.jpg', '../../public/4/photo_2025-07-07_14-41-42.jpg', '../../public/4/photo_2025-07-07_14-38-47.jpg', '../../public/4/photo_2025-07-07_14-38-31.jpg', '../../public/4/photo_2025-07-07_14-38-26.jpg', '../../public/4/photo_2025-07-07_14-37-33.jpg'
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
 
       ],
       description: 'Historic gathering for healing and understanding'
@@ -55,7 +55,67 @@ const GalleryHighlights: React.FC = () => {
     {
       title: 'Community Healing Circle',
       images: [
-        'https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=600',
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg',
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg',
+                'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
+      ],
+      description: 'Grassroots peace building in action'
+    },
+      {
+      title: 'World Vision Ethiopia',
+      images: [
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242904/photo_2025-07-07_13-51-02_sybtox.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242903/2_ctqpbv.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
+     
+        
+      ],
+      description: 'collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference at Nexus Hotel in Addis Ababa.'
+    },
+    {
+      title: 'inter community dialogues between Oromo and Gumuz ',
+      images: [
+'https://res.cloudinary.com/droslno9i/image/upload/v1752243406/1_euts7h.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', '', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
+      ],
+      description: 'Communities in West Wollega, East Wollega and Kemashi Zones  Asossa town from March18- 21/2025'
+    },
+    {
+      title: ' Conference on Peace',
+      images: [
+'https://res.cloudinary.com/droslno9i/image/upload/v1752244154/photo_2025-07-07_14-37-33_kgbc9i.jpg',        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
+
+      ],
+      description: 'Young voices shaping the future of Ethiopia'
+    },
+    {
+      title: 'Tigray Reconciliation Summit',
+      images: [
+'https://res.cloudinary.com/droslno9i/image/upload/v1752246011/photo_2025-07-07_14-20-39_uduftz.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
+
+      ],
+      description: 'Historic gathering for healing and understanding'
+    },
+    {
+      title: 'Interfaith Peace Dialogue',
+      images: [
+'https://res.cloudinary.com/droslno9i/image/upload/v1752245795/photo_2025-07-07_14-50-16_gec3qj.jpg',         'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=600',
+      ],
+      description: 'Religious leaders united for peace'
+    },
+    {
+      title: 'Community Healing Circle',
+      images: [
+        'https://res.cloudinary.com/droslno9i/image/upload/v1752245797/photo_2025-07-07_14-49-02_dcrgw6.jpg',
         'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600',

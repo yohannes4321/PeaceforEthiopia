@@ -36,10 +36,11 @@ function App() {
         return (
           <>
             <Hero />
+                <GalleryHighlights />
             <Vision />
             <Impact />
             <Events />
-            <GalleryHighlights />
+        
             <Testimonials />
             <JoinMovement />
           </>
