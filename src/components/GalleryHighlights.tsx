@@ -1,283 +1,286 @@
-import React, { useState } from 'react';
-import { Eye, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { CalendarDays, MapPin } from 'lucide-react';
 
-const GalleryHighlights: React.FC = () => {
-  const [selectedAlbum, setSelectedAlbum] = useState<number | null>(null);
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
-  const galleries = [
+// --- DATA STRUCTURE (No changes here, as eventDescription is used for photos) ---
+const allGalleries = [
+  {
+    "eventTitle": "The Role of Religious Leaders in Peace",
+    "eventDescription": "Organized by Peace for Ethiopia in collaboration with World Vision Ethiopia, this event focused on the crucial role of religious leaders in fostering peace and reconciliation.",
+    "date": "April 29, 2025",
+    "location": "Nexus, Addis Ababa, Ethiopia",
+"photos": [
     {
-      title: 'World Vision Ethiopia',
-      images: [
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242904/photo_2025-07-07_13-51-02_sybtox.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242903/2_ctqpbv.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
-     
-        
-      ],
-      description: 'collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference at Nexus Hotel in Addis Ababa.'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886704/photo_9_2025-07-30_17-39-24_xfycwf.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'inter community dialogues between Oromo and Gumuz ',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243406/1_euts7h.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
-      ],
-      description: 'Communities in West Wollega, East Wollega and Kemashi Zones  Asossa town from March18- 21/2025'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886702/photo_8_2025-07-30_17-39-24_hho1wo.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: ' Conference on Peace',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
-      ],
-      description: 'Young voices shaping the future of Ethiopia'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886700/photo_7_2025-07-30_17-39-24_yi1evi.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Tigray Reconciliation Summit',
-      images: [
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
-
-      ],
-      description: 'Historic gathering for healing and understanding'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886699/photo_6_2025-07-30_17-39-24_mzhdrj.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Interfaith Peace Dialogue',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
-      ],
-      description: 'Religious leaders united for peace'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886697/photo_5_2025-07-30_17-39-24_cx83gl.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Community Healing Circle',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg',
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg',
-                'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
-      ],
-      description: 'Grassroots peace building in action'
-    },
-      {
-      title: 'World Vision Ethiopia',
-      images: [
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242904/photo_2025-07-07_13-51-02_sybtox.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242903/2_ctqpbv.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-51_qf2lkb.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242900/5_gapafa.jpg',
-     
-        
-      ],
-      description: 'collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference at Nexus Hotel in Addis Ababa.'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886696/photo_4_2025-07-30_17-39-24_mvokpa.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'inter community dialogues between Oromo and Gumuz ',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752243406/1_euts7h.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243419/2_gdddq2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243424/photo_2025-07-07_14-05-50_vmizqp.jpg', '', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243429/photo_2025-07-07_14-05-39_pjkywp.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243451/photo_2025-07-07_14-04-40_ouw7dv.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243457/photo_2025-07-07_14-04-31_d1ukm1.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243463/photo_2025-07-07_14-04-23_oauns2.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243468/photo_2025-07-07_14-04-11_wtnin5.jpg', '../../public/keflhagre/photo_2025-07-07_14-04-23.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752243474/photo_2025-07-07_14-03-25_lgchno.jpg'
-      ],
-      description: 'Communities in West Wollega, East Wollega and Kemashi Zones  Asossa town from March18- 21/2025'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886694/photo_3_2025-07-30_17-39-24_wz8nff.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: ' Conference on Peace',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752244154/photo_2025-07-07_14-37-33_kgbc9i.jpg',        'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752242901/photo_2025-07-07_13-51-30_twrhm4.jpg',
-
-      ],
-      description: 'Young voices shaping the future of Ethiopia'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886692/photo_2_2025-07-30_17-39-24_tdbz1c.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Tigray Reconciliation Summit',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752246011/photo_2025-07-07_14-20-39_uduftz.jpg', 'https://res.cloudinary.com/droslno9i/image/upload/v1752242902/photo_2025-07-07_13-51-23_l1rwap.jpg',
-
-      ],
-      description: 'Historic gathering for healing and understanding'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886691/photo_1_2025-07-30_17-39-24_veh6nb.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Interfaith Peace Dialogue',
-      images: [
-'https://res.cloudinary.com/droslno9i/image/upload/v1752245795/photo_2025-07-07_14-50-16_gec3qj.jpg',         'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=600',
-      ],
-      description: 'Religious leaders united for peace'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886689/photo_6_2025-07-30_17-43-09_mbomxr.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
     {
-      title: 'Community Healing Circle',
-      images: [
-        'https://res.cloudinary.com/droslno9i/image/upload/v1752245797/photo_2025-07-07_14-49-02_dcrgw6.jpg',
-        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=600',
-      ],
-      description: 'Grassroots peace building in action'
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886688/photo_5_2025-07-30_17-43-09_qr73an.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     },
-  ];
-
-  const openLightbox = (albumIndex: number, imageIndex: number) => {
-    setSelectedAlbum(albumIndex);
-    setSelectedImage(imageIndex);
-  };
-
-  const closeLightbox = () => {
-    setSelectedAlbum(null);
-    setSelectedImage(null);
-  };
-
-  const nextImage = () => {
-    if (selectedAlbum !== null && selectedImage !== null) {
-      const currentAlbum = galleries[selectedAlbum];
-      const nextIndex = (selectedImage + 1) % currentAlbum.images.length;
-      setSelectedImage(nextIndex);
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886686/photo_4_2025-07-30_17-43-09_prxvr0.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886686/photo_3_2025-07-30_17-43-09_c4gfqh.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886684/photo_1_2025-07-30_17-43-09_mk6isk.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753886684/photo_2_2025-07-30_17-43-09_grfaub.jpg",
+      "title": "Inter-community Dialogues between Oromo and Gumuz Communities"
     }
-  };
-
-  const prevImage = () => {
-    if (selectedAlbum !== null && selectedImage !== null) {
-      const currentAlbum = galleries[selectedAlbum];
-      const prevIndex = selectedImage === 0 ? currentAlbum.images.length - 1 : selectedImage - 1;
-      setSelectedImage(prevIndex);
+  ]
+  },
+  {
+    "eventTitle": "Inter-community Dialogues between Oromo and Gumuz Communities",
+    "eventDescription": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones.",
+    "date": "May 14-15, 2025",
+    "location": "Asossa town",
+   "photos": [
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887134/photo_8_2025-07-30_17-41-07_txylz8.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887131/photo_7_2025-07-30_17-41-07_gpqnzi.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887127/photo_6_2025-07-30_17-41-07_evxxio.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887123/photo_5_2025-07-30_17-41-07_j05uxj.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887119/photo_4_2025-07-30_17-41-07_visavh.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887115/photo_3_2025-07-30_17-41-07_yoyhat.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887111/photo_2_2025-07-30_17-41-07_nvw8br.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887101/photo_8_2025-07-30_17-41-07_bc0hbz.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887107/photo_1_2025-07-30_17-41-07_jlifte.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887101/photo_8_2025-07-30_17-41-07_bc0hbz.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887096/photo_7_2025-07-30_17-41-07_aipty2.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887093/photo_6_2025-07-30_17-41-07_ncn7jn.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887086/photo_5_2025-07-30_17-41-07_k6hsr5.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887081/photo_4_2025-07-30_17-41-07_csxo5a.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887076/photo_3_2025-07-30_17-41-07_cpcap4.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887073/photo_2_2025-07-30_17-41-07_rfwk6s.jpg",
+      "title": "These dialogues fostered understanding and built bridges between Oromo and Gumuz Communities across West Wollega, East Wollega, and Kemashi Zones."
     }
-  };
+  ]
+  },
+  {
+    "eventTitle": "Peacebuilding Conference",
+    "eventDescription": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace.",
+    "date": "June 27, 2025",
+    "location": "Nexus Hotel in Addis Ababa",
+ "photos": [
+    {
+      "src": "https://res.cloudinary.com/droslno9i/image/upload/v1752242904/photo_2025-07-07_13-51-02_sybtox.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887430/photo_8_2025-07-30_17-37-49_hrkcpb.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887424/photo_7_2025-07-30_17-37-49_m7hwdr.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887393/photo_6_2025-07-30_17-37-49_ewrx9w.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887374/photo_5_2025-07-30_17-37-49_lcdwog.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887370/photo_4_2025-07-30_17-37-49_twvm5y.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887365/photo_3_2025-07-30_17-37-49_ds27gh.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887360/photo_2_2025-07-30_17-37-49_bqtbbx.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    },
+    {
+      "src": "https://res.cloudinary.com/di5zfjqlt/image/upload/v1753887357/photo_1_2025-07-30_17-37-49_cef4ud.jpg",
+      "title": "World Vision Ethiopia, in collaboration with Peace for Ethiopia, successfully hosted a Peacebuilding Conference, bringing together diverse stakeholders to discuss strategies for sustainable peace"
+    }
+  ]
+  }
+];
+
+const GalleryHighlights = () => {
+  const religiousLeadersEvents = allGalleries.filter(
+    (event) => event.eventTitle === "The Role of Religious Leaders in Peace"
+  );
+
+  const interCommunityDialoguesEvents = allGalleries.filter(
+    (event) => event.eventTitle.includes("Inter-community Dialogues")
+  );
+
+  const peacebuildingConferenceEvents = allGalleries.filter(
+    (event) => event.eventTitle === "Peacebuilding Conference"
+  );
+
+  const GallerySection = ({ sectionTitle, events }) => (
+    <div className="mb-16">
+      <h3 className="text-3xl font-bold text-blue-800 mb-8 text-center">
+        {sectionTitle}
+      </h3>
+      {events.map((event, eventIndex) => (
+        <div key={`event-${eventIndex}`} className="mb-12 bg-white rounded-lg shadow-xl p-8 border border-gray-200">
+          {/* Event-level details displayed once per event */}
+          <h4 className="text-3xl font-bold text-blue-900 mb-4">
+            {event.eventTitle}
+          </h4>
+          <p className="text-gray-600 flex items-center mb-2">
+            <CalendarDays className="h-5 w-5 text-gray-500 mr-2" />
+            {event.date}
+          </p>
+          <p className="text-gray-600 flex items-center mb-4">
+            <MapPin className="h-5 w-5 text-gray-500 mr-2" />
+            {event.location}
+          </p>
+          <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+            {event.eventDescription}
+          </p>
+
+          {/* Grid to display ALL individual photos for this event */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {event.photos.map((photo, photoIndex) => (
+              <div
+                key={`photo-${eventIndex}-${photoIndex}`}
+                // Creative box styling for EACH individual photo
+                className="group relative bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <div className="relative aspect-w-1 aspect-h-1 overflow-hidden flex items-center justify-center bg-gray-900">
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
+                    // object-contain: Ensures entire image is visible without cropping.
+                    // Blank bars will appear if image aspect ratio doesn't match square.
+                    className="object-contain w-full h-full transition-transform duration-200 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  {/* Photo Title with Date */}
+                  <h5 className="text-lg font-semibold text-blue-800 mb-1">
+                    {photo.title} ({event.date})
+                  </h5>
+                  {/* Small Description (using event description) */}
+                  <p className="text-gray-600 text-xs leading-snug">
+                    {event.eventDescription}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
-            Gallery Highlights
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Witness the powerful moments of unity, hope, and reconciliation from our 
-            peace-building events across Ethiopia.
-          </p>
-        </div>
+        
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {galleries.map((gallery, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={gallery.images[0]}
-                  alt={gallery.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Eye className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {gallery.images.length} photos
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                  {gallery.title}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {gallery.description}
-                </p>
-                
-                {/* Show first 5 photos in grid */}
-                <div className="grid grid-cols-5 gap-1 mb-4">
-                  {gallery.images.slice(0, 5).map((image, imageIndex) => (
-                    <div key={imageIndex} className="relative">
-                      <img
-                        src={image}
-                        alt={`${gallery.title} - ${imageIndex + 1}`}
-                        className="w-full h-12 object-cover rounded cursor-pointer hover:opacity-80 transition-opacity duration-200"
-                        onClick={() => openLightbox(index, imageIndex)}
-                      />
-                      {imageIndex === 4 && gallery.images.length > 5 && (
-                        <div 
-                          className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center rounded cursor-pointer"
-                          onClick={() => openLightbox(index, imageIndex)}
-                        >
-                          <span className="text-white text-xs font-medium">
-                            +{gallery.images.length - 5}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-                
-                <div 
-                  className="flex items-center text-blue-900 font-medium group-hover:text-blue-600 transition-colors duration-200 cursor-pointer"
-                  onClick={() => openLightbox(index, 0)}
-                >
-                  <span>View All Photos</span>
-                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <GallerySection
+          sectionTitle="1. The Role of Religious Leaders in Peace"
+          events={religiousLeadersEvents}
+        />
 
-        <div className="text-center mt-12">
-          <button className="bg-blue-900 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-800 transition-colors duration-200">
-            View Full Gallery
-          </button>
-        </div>
+        <GallerySection
+          sectionTitle="2. Inter-community Dialogues"
+          events={interCommunityDialoguesEvents}
+        />
+
+        <GallerySection
+          sectionTitle="3. Peacebuilding Conference"
+          events={peacebuildingConferenceEvents}
+        />
+
       </div>
-
-      {/* Lightbox */}
-      {selectedAlbum !== null && selectedImage !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-full">
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-            >
-              <X className="h-8 w-8" />
-            </button>
-            
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </button>
-            
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </button>
-            
-            <img
-              src={galleries[selectedAlbum].images[selectedImage]}
-              alt={`${galleries[selectedAlbum].title} - ${selectedImage + 1}`}
-              className="max-w-full max-h-full object-contain"
-            />
-            
-            <div className="absolute bottom-4 left-4 right-4 text-white text-center">
-              <h3 className="text-lg font-semibold mb-1">{galleries[selectedAlbum].title}</h3>
-              <p className="text-sm opacity-80">
-                {selectedImage + 1} of {galleries[selectedAlbum].images.length}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

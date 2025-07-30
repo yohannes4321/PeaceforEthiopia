@@ -14,6 +14,7 @@ import Gallery from './pages/Gallery';
 import Documentary from './pages/Documentary';
 import Partners from './pages/Partners';
 import Contact from './pages/Contact';
+import AreasOfWork from './pages/Area';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,13 +37,12 @@ function App() {
         return (
           <>
             <Hero />
+            <Partners />
+            <AreasOfWork/>
+            <About />
                 <GalleryHighlights />
-            <Vision />
-            <Impact />
-            <Events />
-        
-            <Testimonials />
-            <JoinMovement />
+                
+       
           </>
         );
     }

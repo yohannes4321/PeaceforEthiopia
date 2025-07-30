@@ -28,9 +28,9 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           {/* Logo and Mission */}
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <img 
-                src="/photo_2025-07-07_13-19-07.jpg" 
-                alt="Peace for Ethiopia Logo" 
+              <img
+                src="/photo_2025-07-07_13-19-07.jpg"
+                alt="Peace for Ethiopia Logo"
                 className="h-8 w-8 mr-2"
               />
               <div className="flex flex-col">
@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               </div>
             </div>
             <p className="text-gray-300 mb-6">
-              Building Unity, Healing a Nation, Inspiring a Generation through dialogue, 
+              Building Unity, Healing a Nation, Inspiring a Generation through dialogue,
               mediation, and community engagement.
             </p>
             <div className="flex space-x-4">
@@ -81,17 +81,21 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-200" />
-                <span className="text-gray-300">info@peaceforethiopia.org</span>
+                <span className="text-gray-300">peacethiopian@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-200" />
-                <span className="text-gray-300">+251 11 XXX XXXX</span>
+                <span className="text-gray-300">+251911601705</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 mr-3 text-blue-200" />
+                <span className="text-gray-300">+251993232423</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-blue-200 mt-1" />
                 <span className="text-gray-300">
-                  Bole Road, Addis Ababa<br />
-                  Ethiopia
+                  Lemmi Kura Subcity, Woreda 08<br />
+                  Addis Ababa, Ethiopia
                 </span>
               </div>
             </div>
